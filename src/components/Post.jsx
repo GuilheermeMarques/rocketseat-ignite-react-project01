@@ -9,8 +9,7 @@ import styles from './Post.module.css';
 
 export function Post({ author, publishedAt, content }) {
     const [ comments, setComments ] = useState([
-        1, 
-        2
+        'Muito bom, parabéns!! 👏👏'
     ])
 
     const publishedDateFormatted = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
@@ -67,7 +66,7 @@ export function Post({ author, publishedAt, content }) {
 
             <div className={styles.commentList}>
                 {comments.map(comment => {
-                    return <Comment />
+                    return <Comment content={comment} />
                 })}
             </div>
         </article>
